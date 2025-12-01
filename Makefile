@@ -9,22 +9,22 @@ SRCS=ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	ft_putnbr_fd.c get_next_line.c get_next_line_utils.c
 OBJS=$(addprefix $(OBJS_DIR), $(SRCS:.c=.o))
-LIBS_DIR=$(addprefix libs/, ft_printf/)
-LIBS=$(addprefix $(LIBS_DIR), libftprintf.a)
+FTPRINTF_DIR=libs/ft_printf/
+FTPRINTF=$(addprefix $(FTPRINTF_DIR), libftprintf.a)
 CC=cc
 CFLAGS=-Wall -Wextra -Werror -I$(HEADERS)
 NAME=libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBS)
+$(NAME): $(OBJS) $(FTPRINTF)
 	ar -rcs $@ $^
 
 $(OBJS_DIR)%.o: $(SRCS_DIR)%.c
 	@mkdir -p $(OBJS_DIR)
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
-$(LIBS):
+$(FTPRINTF):
 	make -sC $(LIBS_DIR) all
 
 clean:
