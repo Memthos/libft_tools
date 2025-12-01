@@ -25,16 +25,17 @@ $(OBJS_DIR)%.o: $(SRCS_DIR)%.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 $(FTPRINTF):
-	make -sC $(LIBS_DIR) all
+	make -sC $(FTPRINTF_DIR) all
 
 clean:
 	rm -drf $(OBJS_DIR)
-	make -sC $(LIBS_DIR) clean
+	make -sC $(FTPRINTF_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
-	make -sC $(LIBS_DIR) fclean
+	make -sC $(FTPRINTF_DIR) fclean
 
 re: fclean all
 
 .PHONY: all clean fclean re
+
