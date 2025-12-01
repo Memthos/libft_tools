@@ -10,18 +10,23 @@ NAME=libftprintf.a
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rcs $@ $^
+	@ar -rcs $@ $^
+	@echo "Finished compiling Ft_Printf"
 
 $(OBJS_DIR)%.o:$(SRCS_DIR)%.c
+	@echo "Compiling sources..."
 	@mkdir -p $(OBJS_DIR)
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
-	rm -drf $(OBJS_DIR)
+	@rm -drf $(OBJS_DIR)
+	@echo "Cleaned Ft_Printf object files"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "Cleaned Ft_Printf"
 
 re: fclean all
+	@echo "Recompiled Ft_Printf"
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean res

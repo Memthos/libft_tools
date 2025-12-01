@@ -19,23 +19,29 @@ all: $(NAME)
 
 $(NAME): $(OBJS) $(FTPRINTF)
 	ar -rcs $@ $^
+	@echo "Finished compiling Libft"
 
 $(OBJS_DIR)%.o: $(SRCS_DIR)%.c
+	@echo "Compiling sources..."
 	@mkdir -p $(OBJS_DIR)
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 $(FTPRINTF):
 	make -sC $(FTPRINTF_DIR) all
+	@echo "Compiled library Ft_Printf"
 
 clean:
 	rm -drf $(OBJS_DIR)
 	make -sC $(FTPRINTF_DIR) clean
+	@echo "Cleaned Libft object files"
 
 fclean: clean
 	rm -f $(NAME)
 	make -sC $(FTPRINTF_DIR) fclean
+	@echo "Cleaned Libft"
 
 re: fclean all
+	@echo "Recompiled Libft"
 
 .PHONY: all clean fclean re
 
