@@ -11,22 +11,24 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar -rcs $@ $^
-	@echo "Finished compiling Ft_Printf"
+	@echo "Finished compiling ft_printf"
 
-$(OBJS_DIR)%.o:$(SRCS_DIR)%.c
-	@echo "Compiling sources..."
+$(OBJS_DIR)%.o:$(SRCS_DIR)%.c compiling
 	@mkdir -p $(OBJS_DIR)
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
+compiling:
+	@echo "Compiling ft_printf sources..."
+
 clean:
 	@rm -drf $(OBJS_DIR)
-	@echo "Cleaned Ft_Printf object files"
+	@echo "Cleaned ft_printf object files"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "Cleaned Ft_Printf"
+	@echo "Cleaned ft_printf"
 
 re: fclean all
-	@echo "Recompiled Ft_Printf"
+	@echo "Recompiled ft_printf"
 
-.PHONY: all clean fclean res
+.PHONY: all clean fclean compiling
