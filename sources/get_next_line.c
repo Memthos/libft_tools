@@ -6,11 +6,11 @@
 /*   By: mperrine <mperrine@student.42angouleme.f>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 16:04:35 by mperrine          #+#    #+#             */
-/*   Updated: 2025/12/01 11:49:11 by mperrine         ###   ########.fr       */
+/*   Updated: 2025/12/03 12:39:01 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/get_next_line.h"
+#include "../headers/libft.h"
 
 void	free_memory(char **str)
 {

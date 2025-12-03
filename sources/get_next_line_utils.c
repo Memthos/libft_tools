@@ -6,11 +6,11 @@
 /*   By: mperrine <mperrine@student.42angouleme.f>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 16:05:10 by mperrine          #+#    #+#             */
-/*   Updated: 2025/12/01 11:48:01 by mperrine         ###   ########.fr       */
+/*   Updated: 2025/12/03 12:39:05 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/get_next_line.h"
+#include "../headers/libft.h"
 
 void	ft_strmove(char **dest, char **src, const int start, const int end)
 {

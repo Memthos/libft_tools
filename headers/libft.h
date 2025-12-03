@@ -6,7 +6,7 @@
 /*   By: mperrine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:16:15 by mperrine          #+#    #+#             */
-/*   Updated: 2025/12/01 11:47:30 by mperrine         ###   ########.fr       */
+/*   Updated: 2025/12/03 12:38:45 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include "get_next_line.h"
 
 typedef struct s_list
 {
@@ -67,5 +66,19 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+char	*get_next_line(int fd);
+int		read_more(const int fd, char **buffer, int *read_res);
+int		buffer_update(char **buffer, char **read_str, const int read_res);
+void	ft_strmove(char **dest, char **src, const int start, const int end);
+int		check_linebreak(const char *str, int *break_pos, const int read_res);
+int		get_line(char **str, char **buffer, const int break_pos);
+int		clean_buffer(char **buffer, const char *str);
+int		init_buffer(char **buffer);
+void	free_memory(char **str);
 
 #endif
