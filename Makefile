@@ -42,4 +42,4 @@ fclean: clean
 re: fclean all
 	@echo "Recompiled libft"
 
-.PHONY: all clean fclean re compiling
+.PHONY: all clean fclean re
