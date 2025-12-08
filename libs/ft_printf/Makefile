@@ -28,4 +28,4 @@ fclean: clean
 re: fclean all
 	@echo "Recompiled ft_printf"
 
-.PHONY: all clean fclean
+.PHONY: all clean fclean re
