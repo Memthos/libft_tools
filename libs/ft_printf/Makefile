@@ -13,12 +13,9 @@ $(NAME): $(OBJS)
 	@ar -rcs $@ $^
 	@echo "Finished compiling ft_printf"
 
-$(OBJS_DIR)%.o:$(SRCS_DIR)%.c compiling
+$(OBJS_DIR)%.o:$(SRCS_DIR)%.c
 	@mkdir -p $(OBJS_DIR)
 	@$(CC) $(CFLAGS) -o $@ -c $<
-
-compiling:
-	@echo "Compiling ft_printf sources..."
 
 clean:
 	@rm -drf $(OBJS_DIR)
