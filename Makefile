@@ -21,12 +21,9 @@ $(NAME): $(OBJS) $(FTPRINTF)
 	@ar -rcs $@ $^
 	@echo "Finished compiling libft"
 
-$(OBJS_DIR)%.o: $(SRCS_DIR)%.c compiling
+$(OBJS_DIR)%.o: $(SRCS_DIR)%.c
 	@mkdir -p $(OBJS_DIR)
 	@$(CC) $(CFLAGS) -o $@ -c $<
-
-compiling:
-	@echo "Compiling libft sources..."
 
 $(FTPRINTF):
 	@echo "Compiling library ft_printf..."
