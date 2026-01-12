@@ -107,7 +107,7 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		nbsubs;
 
-	if (s == NULL)
+	if (s == NULL || s[0] == '\0')
 		return (NULL);
 	nbsubs = ft_nbrsubs(s, c);
 	substrings = (char **) malloc((nbsubs + 1) * sizeof(char *));
