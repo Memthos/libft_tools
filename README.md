@@ -1,3 +1,5 @@
+*This project has been created as part of the 42 curriculum by mperrine.*
+
 ## Description
 
 `libft_tools` is a lighter, optimized version of the libft library. It also includes implementations of `get_next_line` and `ft_printf`.
