@@ -13,7 +13,7 @@ FTPRINTF_DIR=libs/ft_printf/
 FTPRINTF=$(addprefix $(FTPRINTF_DIR), libftprintf.a)
 CC=cc
 CFLAGS=-Wall -Wextra -Werror -I$(HEADERS)
-NAME=libft.a
+NAME=libft_tools.a
 
 all: $(NAME)
 
