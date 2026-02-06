@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperrine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -22,6 +22,8 @@ char	*ft_strcpy(char *s)
 		return (NULL);
 	size = ft_strlen(s);
 	cpy = malloc (sizeof(char) * (size + 1));
+	if (!cpy)
+		return (NULL);
 	i = 0;
 	while (i < size)
 	{
