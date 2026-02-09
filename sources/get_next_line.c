@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/libft.h"
+#include "../includes/libft.h"
 
 void	free_memory(char **str)
 {
