@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 13:22:46 by mperrine          #+#    #+#             */
+/*   Created: 2025/09/08 13:25:16 by mperrine          #+#    #+#             */
 /*   Updated: 2026/02/08 12:29:10 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strcpy(char *s)
+int	ft_strcmp(char *s1, char *s2)
 {
-	char	*cpy;
-	size_t	size;
-	size_t	i;
+	int	i;
 
-	if (!s)
-		return (NULL);
-	size = ft_strlen(s);
-	cpy = malloc (sizeof(char) * (size + 1));
-	if (!cpy)
-		return (NULL);
 	i = 0;
-	while (i < size)
-	{
-		cpy[i] = s[i];
+	while (s1[i] == s2[i] && s1[i] && s2[i])
 		i++;
-	}
-	cpy[i] = '\0';
-	return (cpy);
+	return (s1[i] - s2[i]);
 }
