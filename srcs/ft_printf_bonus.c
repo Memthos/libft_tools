@@ -58,7 +58,7 @@ static int	set_length(const char *format, t_ft_printf *data, size_t *add)
 			(*add)++;
 		}
 		else
-			data->flags.prec = get_number(format, add);
+			data->flags.prec = get_flag_value(format, add);
 	}
 	else if (format[*add] == '*' && data->flags.wdt == -1)
 	{
@@ -66,7 +66,7 @@ static int	set_length(const char *format, t_ft_printf *data, size_t *add)
 		(*add)++;
 	}
 	else if (ft_isdigit(format[*add]) && data->flags.wdt == -1)
-		data->flags.wdt = get_number(format, add);
+		data->flags.wdt = get_flag_value(format, add);
 	else
 		return (1);
 	return (0);

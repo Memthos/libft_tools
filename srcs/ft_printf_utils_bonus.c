@@ -35,7 +35,7 @@ void	ft_putstr(char *s, t_ft_printf *data)
 		ft_putchar(s[i++], data);
 }
 
-int	get_number(const char *format, size_t *i)
+int	get_flag_value(const char *format, size_t *i)
 {
 	long	res;
 

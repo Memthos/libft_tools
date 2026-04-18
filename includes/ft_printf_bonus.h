@@ -56,7 +56,7 @@ void	hex_arg(unsigned int nb, t_ft_printf *data);
 
 void	ft_putchar(char c, t_ft_printf *data);
 void	ft_putstr(char *s, t_ft_printf *data);
-int		get_number(const char *format, size_t *i);
+int		get_flag_value(const char *format, size_t *i);
 
 int		width_base(char **src, int prefix, int srclen, t_ft_printf *data);
 int		apply_precision_nb(char **src, int prefix, t_ft_printf *data);
