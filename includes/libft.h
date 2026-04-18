@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:16:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/03/08 00:58:24 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/04/18 23:45:08 by memthos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include "../libs/ft_printf/headers/ft_printf.h"
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+int		ft_isspace(int c);
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
@@ -54,19 +54,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-char	*get_next_line(int fd);
-int		read_more(const int fd, char **buffer, int *read_res);
-int		buffer_update(char **buffer, char **read_str, const int read_res);
-void	ft_strmove(char **dest, char **src, const int start, const int end);
-int		check_linebreak(const char *str, int *break_pos, const int read_res);
-int		get_line(char **str, char **buffer, const int break_pos);
-int		clean_buffer(char **buffer, const char *str);
-int		init_buffer(char **buffer);
-void	free_memory(char **str);
+void	ft_free_tab(char **tab);
 
 #endif
