@@ -1,5 +1,5 @@
 VPATH=srcs
-OBJS_DIR=objects/
+OBJS_DIR=objs/
 HEADERS=includes/
 SRCS=ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	ft_isdigit.c ft_isprint.c ft_isspace.c ft_itoa.c ft_memchr.c ft_memcmp.c \
