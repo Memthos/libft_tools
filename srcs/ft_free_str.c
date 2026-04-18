@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_tab.c                                      :+:      :+:    :+:   */
+/*   ft_free_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 12:21:42 by mperrine          #+#    #+#             */
-/*   Updated: 2026/04/18 23:33:01 by memthos          ###   ########.fr       */
+/*   Updated: 2026/04/19 00:11:06 by memthos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_tab(char ***tab)
+void	ft_free_str(char **str)
 {
-	size_t	i;
-
-	if (!tab || !*tab)
+	if (!str || !*str)
 		return ;
-	i = 0;
-	while ((*tab)[i])
-		free((*tab)[i++]);
-	free(*tab);
-	*tab = NULL;
+	free(*str);
+	*str = NULL;
 }

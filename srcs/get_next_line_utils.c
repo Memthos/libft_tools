@@ -39,7 +39,7 @@ int	buffer_update(char **buffer, char **read_str, const int read_res)
 	*buffer = malloc(sizeof(char) * (buffer_len + read_res + 1));
 	if (!(*buffer))
 	{
-		ft_free_tab(&tmp);
+		ft_free_str(&tmp);
 		return (0);
 	}
 	ft_strmove(buffer, &tmp, 0, ft_strlen(tmp));
@@ -88,7 +88,7 @@ int	clean_buffer(char **buffer, const char *str)
 	*buffer = malloc(sizeof(char) * (ft_strlen(tmp) + 1));
 	if (!*buffer)
 	{
-		ft_free_tab(&tmp);
+		ft_free_str(&tmp);
 		return (0);
 	}
 	ft_strmove(buffer, &tmp, 0, ft_strlen(tmp));

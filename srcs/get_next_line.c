@@ -28,12 +28,12 @@ int	get_line(char **str, char **buffer, const int break_pos)
 	(*str)[i] = '\0';
 	if (break_pos == (int)ft_strlen(*buffer))
 	{
-		ft_free_tab(buffer);
+		ft_free_str(buffer);
 		return (1);
 	}
 	if (!clean_buffer(buffer, *str))
 	{
-		ft_free_tab(str);
+		ft_free_str(str);
 		return (0);
 	}
 	return (1);
@@ -46,7 +46,7 @@ int	read_more(const int fd, char **buffer, int *read_res)
 	read_str = malloc(sizeof(char) * (BUFFER_SIZE));
 	if (!read_str)
 	{
-		ft_free_tab(buffer);
+		ft_free_str(buffer);
 		return (0);
 	}
 	*read_res = (int) read(fd, read_str, BUFFER_SIZE);
@@ -55,13 +55,13 @@ int	read_more(const int fd, char **buffer, int *read_res)
 		free(read_str);
 		if (*read_res == 0 && (*buffer)[0] != '\0')
 			return (1);
-		ft_free_tab(buffer);
+		ft_free_str(buffer);
 		return (0);
 	}
 	if (!buffer_update(buffer, &read_str, *read_res))
 	{
-		ft_free_tab(buffer);
-		ft_free_tab(&read_str);
+		ft_free_str(buffer);
+		ft_free_str(&read_str);
 		return (0);
 	}
 	return (1);
@@ -102,7 +102,7 @@ char	*get_next_line(int fd)
 		{
 			if (!get_line(&str, &buffer, break_pos))
 			{
-				ft_free_tab(&buffer);
+				ft_free_str(&buffer);
 				return (NULL);
 			}
 			break ;
